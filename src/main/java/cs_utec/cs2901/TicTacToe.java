@@ -22,6 +22,8 @@ public class TicTacToe {
         }
         if (counter == 0)
             System.out.println("No winners");
+    }
+
     private void check_winner() {
         // Filas
         if (matrix[0][0].equals(matrix[0][1]) && matrix[0][1].equals(matrix[0][2]) && !matrix[0][0].equals(" ")) {
@@ -59,12 +61,12 @@ public class TicTacToe {
             System.out.println("Winner is " + matrix[0][0]);
             win = true;
         }
-    }	}
+    }
 
      private void read() {
         System.out.print("Ingrese Coordenadas: ");
         String[] line = scanner.nextLine().split(",");
-        if (line[0]>2 || line[1]>2 || line[0]<0 || line[1]<0){
+        if (Integer.parseInt(line[0]) < 2 || Integer.parseInt(line[1]) < 2 || Integer.parseInt(line[0]) > 0 || Integer.parseInt(line[1]) > 0){
             if (matrix[Integer.parseInt(line[0])][Integer.parseInt(line[1])].equals(" "))
             {
                 matrix[Integer.parseInt(line[0])][Integer.parseInt(line[1])] = symbol;
